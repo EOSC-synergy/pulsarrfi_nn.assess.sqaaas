@@ -1,0 +1,42 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/2.0.0
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    gitlab.com/ml-ppa/pulsarrfi_nn:
+      branch: main
+      repo: https://gitlab.com/ml-ppa/pulsarrfi_nn
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      gitlab.com/ml-ppa/pulsarrfi_nn git:
+        commands:
+        - /usr/bin/env sh .sqa/script.blurry-orchid-hyena.sh
+        container: qc.acc_bluesy-emerald-dodo
+  QC.Doc:
+    repos:
+      gitlab.com/ml-ppa/pulsarrfi_nn find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.beady-jade-wasp.sh
+        container: qc.doc_snazzy-wheat-russel
+      gitlab.com/ml-ppa/pulsarrfi_nn git:
+        commands:
+        - /usr/bin/env sh .sqa/script.trippy-malachite-burmese.sh
+        container: qc.doc_hazy-orchid-fowl
+  QC.Lic:
+    repos:
+      gitlab.com/ml-ppa/pulsarrfi_nn licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.surly-black-dormouse.sh
+        container: qc.lic_sleazy-azure-rhinoceros
+  QC.Ver:
+    repos:
+      gitlab.com/ml-ppa/pulsarrfi_nn get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.whiny-coral-flounder.sh
+        container: qc.ver_homely-tomato-monster
+timeout: 5400
