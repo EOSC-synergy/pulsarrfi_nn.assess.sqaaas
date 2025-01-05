@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "3.0.0",
+        "version": "3.2.1",
         "report_json_url": "https://raw.githubusercontent.com/eosc-synergy/pulsarrfi_nn.assess.sqaaas/main/.report/assessment_output.json"
     },
     "repository": [
@@ -27,7 +27,7 @@
                             "message": "Source code uses Git for version control",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-boolean",
-                                "version": "1.2.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "git",
@@ -79,7 +79,7 @@
                             "message": "A README file is present in the code repository",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-find_doc_files",
-                                "version": "1.2.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "find_doc_files.py",
@@ -130,7 +130,7 @@
                             "message": "A CODE_OF_CONDUCT file is not present in the code repository",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-find_doc_files",
-                                "version": "1.2.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "find_doc_files.py",
@@ -182,7 +182,7 @@
                             "message": "A CONTRIBUTING file is not present in the code repository",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-find_doc_files",
-                                "version": "1.2.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "find_doc_files.py",
@@ -234,7 +234,7 @@
                             "message": "Documentation resides in the same repository as code",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-boolean",
-                                "version": "1.2.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "git",
@@ -283,7 +283,7 @@
                             "message": "An Open Source license found in the code repository: AGPL-3.0",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-licensee",
-                                "version": "1.2.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "licensee",
@@ -435,7 +435,7 @@
                             "message": "LICENSE file is visible at the root path of the code repository: LICENSE",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-licensee",
-                                "version": "1.2.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "licensee",
@@ -587,7 +587,7 @@
                             "message": "License AGPL-3.0 is approved by the Open Source Initiative",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-licensee",
-                                "version": "1.2.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "licensee",
@@ -739,7 +739,7 @@
                             "message": "License AGPL-3.0 is listed under the Open Source Initiative popular category",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-licensee",
-                                "version": "1.2.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "licensee",
@@ -901,7 +901,7 @@
                             "message": "The code repository does not use tags for releasing new software versions",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-is_semver",
-                                "version": "1.0.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "get_git_tags.py",
@@ -944,7 +944,7 @@
                             "message": "Latest release tag None found, but is not SemVer compliant",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-is_semver",
-                                "version": "1.0.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "get_git_tags.py",
@@ -987,7 +987,7 @@
                             "message": "All release tags are SemVer compliant",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-is_semver",
-                                "version": "1.0.0"
+                                "version": "2.1.0"
                             },
                             "tool": {
                                 "name": "get_git_tags.py",
@@ -1120,25 +1120,25 @@
             "criteria": {
                 "bronze": {
                     "to_fulfill": [
+                        "QC.Acc",
                         "QC.Lic",
-                        "QC.Doc",
-                        "QC.Acc"
+                        "QC.Doc"
                     ],
                     "missing": [
                         "QC.Doc"
                     ],
                     "fulfilled": [
-                        "QC.Lic",
-                        "QC.Acc"
+                        "QC.Acc",
+                        "QC.Lic"
                     ]
                 },
                 "silver": {
                     "to_fulfill": [
+                        "QC.Acc",
+                        "QC.Lic",
                         "QC.Ver",
                         "QC.Met",
-                        "QC.Lic",
-                        "QC.Doc",
-                        "QC.Acc"
+                        "QC.Doc"
                     ],
                     "missing": [
                         "QC.Ver",
@@ -1146,32 +1146,32 @@
                         "QC.Doc"
                     ],
                     "fulfilled": [
-                        "QC.Lic",
-                        "QC.Acc"
+                        "QC.Acc",
+                        "QC.Lic"
                     ]
                 },
                 "gold": {
                     "to_fulfill": [
-                        "QC.Ver",
-                        "QC.Uni",
-                        "QC.Met",
-                        "QC.Lic",
-                        "QC.Doc",
                         "QC.Acc",
                         "QC.Sec",
-                        "QC.Sty"
+                        "QC.Uni",
+                        "QC.Lic",
+                        "QC.Ver",
+                        "QC.Sty",
+                        "QC.Met",
+                        "QC.Doc"
                     ],
                     "missing": [
-                        "QC.Ver",
+                        "QC.Sec",
                         "QC.Uni",
-                        "QC.Met",
-                        "QC.Doc",
+                        "QC.Ver",
                         "QC.Sty",
-                        "QC.Sec"
+                        "QC.Met",
+                        "QC.Doc"
                     ],
                     "fulfilled": [
-                        "QC.Lic",
-                        "QC.Acc"
+                        "QC.Acc",
+                        "QC.Lic"
                     ]
                 }
             },
