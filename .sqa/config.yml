@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.0.0
+      branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     gitlab.com/ml-ppa/pulsarrfi_nn:
       branch: main
@@ -15,28 +15,54 @@ sqa_criteria:
     repos:
       gitlab.com/ml-ppa/pulsarrfi_nn git:
         commands:
-        - /usr/bin/env sh .sqa/script.blurry-orchid-hyena.sh
-        container: qc.acc_bluesy-emerald-dodo
+        - /usr/bin/env sh .sqa/script.sleepy-periwinkle-lizard.sh
+        container: qc.acc_boozy-aqua-ostrich
   QC.Doc:
     repos:
       gitlab.com/ml-ppa/pulsarrfi_nn find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.beady-jade-wasp.sh
-        container: qc.doc_snazzy-wheat-russel
+        - /usr/bin/env sh .sqa/script.cheeky-mauve-sheep.sh
+        container: qc.doc_lovely-charcoal-spaniel
       gitlab.com/ml-ppa/pulsarrfi_nn git:
         commands:
-        - /usr/bin/env sh .sqa/script.trippy-malachite-burmese.sh
-        container: qc.doc_hazy-orchid-fowl
+        - /usr/bin/env sh .sqa/script.queasy-taupe-warthog.sh
+        container: qc.doc_lovely-peach-flamingo
+      gitlab.com/ml-ppa/pulsarrfi_nn markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.seedy-bronze-mule.sh
+        container: qc.doc_surly-sepia-buzzard
+      gitlab.com/ml-ppa/pulsarrfi_nn restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.crappy-apricot-dragon.sh
+        container: qc.doc_grumpy-dandelion-dollar
   QC.Lic:
     repos:
       gitlab.com/ml-ppa/pulsarrfi_nn licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.surly-black-dormouse.sh
-        container: qc.lic_sleazy-azure-rhinoceros
+        - /usr/bin/env sh .sqa/script.beady-auburn-rhinoceros.sh
+        container: qc.lic_muggy-magenta-wombat
+  QC.Sec:
+    repos:
+      gitlab.com/ml-ppa/pulsarrfi_nn bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.dorky-lilac-chameleon.sh
+        container: qc.sec_sleepy-ultramarine-bracke
+  QC.Sty:
+    repos:
+      gitlab.com/ml-ppa/pulsarrfi_nn flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.ready-khaki-fossa.sh
+        container: qc.sty_chewy-pear-mist
+  QC.Uni:
+    repos:
+      gitlab.com/ml-ppa/pulsarrfi_nn pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.skanky-sepia-discus.sh
+        container: qc.uni_goopy-cinnamon-eagle
   QC.Ver:
     repos:
       gitlab.com/ml-ppa/pulsarrfi_nn get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.whiny-coral-flounder.sh
-        container: qc.ver_homely-tomato-monster
+        - /usr/bin/env sh .sqa/script.sleazy-salmon-antelope.sh
+        container: qc.ver_trippy-alizarin-camel
 timeout: 5400

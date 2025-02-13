@@ -5,5 +5,5 @@
 
 (
 cd gitlab.com/ml-ppa/pulsarrfi_nn &&
-    licensee detect . --confidence 60 --json
+    bandit -f json --quiet  --confidence-level high --severity-level high --recursive  .
 )

@@ -5,5 +5,5 @@
 
 (
 cd gitlab.com/ml-ppa/pulsarrfi_nn &&
-    git rev-parse --is-inside-work-tree
+    git rev-parse --is-inside-work-tree 
 )
